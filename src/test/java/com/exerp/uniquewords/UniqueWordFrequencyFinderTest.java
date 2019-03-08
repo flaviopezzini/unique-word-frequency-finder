@@ -21,8 +21,8 @@ public class UniqueWordFrequencyFinderTest {
     uniqueWordFrequencyFinder = new UniqueWordFrequencyFinder(new StringCleaner());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void shouldNotAcceptLimitBelowZero() {
+  @Test(expected = InvalidResultSizeException.class)
+  public void shouldNotAcceptResultSizeBelowZero() {
     List<String> empty = Arrays.asList();
     uniqueWordFrequencyFinder.find(empty.stream(), -1);
   }

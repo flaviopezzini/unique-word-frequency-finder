@@ -21,16 +21,18 @@ public class UniqueWordFrequencyFinder {
    * descending order. Limit the result by the limit parameter
    * 
    * @param reader - a buffered reader
-   * @param limit - how many results to return
+   * @param resultSize - how many results to return
    * @return sorted frequency list of words with their occurrence count
+   * @throws InvalidResultSizeException 
    * @throws IOException
    */
-  public Map<String, Integer> find(Stream<String> lines, int limit) {
+  public Map<String, Integer> find(Stream<String> lines, int resultSize) 
+      throws InvalidResultSizeException {
     Map<String, Integer> result = new HashMap<>();
     
-    if (limit < 0) {
-      throw new IllegalArgumentException("Limit must be higher than zero.");
-    } else if (limit == 0) {
+    if (resultSize < 0) {
+      throw new InvalidResultSizeException("Result Size must be higher than zero.");
+    } else if (resultSize == 0) {
       return result; // no need to process anything
     }
 
@@ -52,7 +54,7 @@ public class UniqueWordFrequencyFinder {
             .entrySet()
             .stream()
             .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
-            .limit(limit)
+            .limit(resultSize)
             .collect(
                 toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
   }
