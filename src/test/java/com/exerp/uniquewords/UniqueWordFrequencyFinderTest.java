@@ -87,7 +87,7 @@ public class UniqueWordFrequencyFinderTest {
   
   @Test
   public void shouldHandleFileStreams() throws IOException {
-    Stream<String> fileLines = Files.lines(Paths.get("src/test/resources/tempest.txt"));
+    Stream<String> fileLines = Files.lines(Paths.get("src","test","resources","tempest.txt"));
     
     Map<String, Integer> result = uniqueWordFrequencyFinder.find(fileLines, 10);
     Map<String, Integer> expected = new HashMap<String, Integer>() {{
