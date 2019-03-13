@@ -20,7 +20,7 @@ public class UniqueWordFrequencyFinder {
    * Find all unique words in the given BufferedReader, count their frequency and sort them by
    * descending order. Limit the result by the limit parameter
    * 
-   * @param reader - a buffered reader
+   * @param lines - lines of text to process
    * @param resultSize - how many results to return
    * @return sorted frequency list of words with their occurrence count
    * @throws InvalidResultSizeException 
