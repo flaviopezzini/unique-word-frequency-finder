@@ -17,7 +17,7 @@ public class UniqueWordFrequencyFinder {
   }
 
   /**
-   * Find all unique words in the given BufferedReader, count their frequency and sort them by
+   * Find all unique words in the given stream of strings, count their frequency and sort them by
    * descending order. Limit the result by the limit parameter
    * 
    * @param lines - lines of text to process
