@@ -18,7 +18,7 @@ public class UniqueWordFrequencyFinder {
 
   /**
    * Find all unique words in the given stream of strings, count their frequency and sort them by
-   * descending order. Limit the result by the limit parameter
+   * descending order. Limit the result by the resultSize parameter
    * 
    * @param lines - lines of text to process
    * @param resultSize - how many results to return
